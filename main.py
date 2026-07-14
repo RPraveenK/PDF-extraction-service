@@ -4,7 +4,8 @@ import base64, io, re
 from pypdf import PdfReader
 
 app = FastAPI()
-API_KEY = "change-me-to-a-long-random-string"
+import os
+API_KEY = os.environ.get("API_KEY", "")
 
 class Req(BaseModel):
     filename: str = ""
